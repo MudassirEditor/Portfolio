@@ -12,45 +12,95 @@
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
-/* Fonts */
+/* Fonts
+   NOTE: Recoleta and Carollo Playscript are not distributed on Google Fonts —
+   they need to be self-hosted. Drop the licensed font files into
+   assets/fonts/ using the filenames below (or update the src paths) and
+   these will pick them up automatically. Inter is loaded from Google Fonts
+   in the <head>. Fallback stacks are in place so the site still looks
+   intentional if a font file is missing. */
+@font-face {
+  font-family: "Recoleta";
+  src: url("../fonts/Recoleta-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("../fonts/Recoleta-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("../fonts/Recoleta-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Carollo Playscript";
+  src: url("../fonts/CarolloPlayscript-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Carollo Playscript";
+  src: url("../fonts/CarolloPlayscript-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Mulish",  sans-serif;
-  --nav-font: "Raleway",  sans-serif;
+  --default-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Recoleta", Georgia, "Times New Roman", serif;
+  --accent-heading-font: "Carollo Playscript", "Segoe Script", cursive, var(--heading-font);
+  --nav-font: "Inter", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #141414; /* Background color for the entire website, including individual sections */
-  --default-color: #d9d9d9; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #ededed; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #ff4d4f; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #1c1c1c; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --background-color: #121212; /* Background color for the entire website, including individual sections */
+  --default-color: #cfcac0; /* Default color used for the majority of the text content across the entire website — warm light grey to sit comfortably against the bone-white headings */
+  --heading-color: #f3eee0; /* Bone white — h1 / primary titles */
+  --heading-color-accent: #ff4d01; /* Accent orange — h2, h3 and every heading after it */
+  --accent-color: #ff4d01; /* Accent color that represents your brand on the website. It's used for buttons, links, icons and anything that needs to stand out */
+  --accent-color-dark: #cc3e01; /* Darker shade of the accent — hover/active states */
+  --accent-color-light: #ff7a3d; /* Lighter shade of the accent — soft glows, tints */
+  --surface-color: #1a1a1a; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #d9d9d9;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ff4d4f; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #2e2e2e; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #2e2e2e; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #d9d9d9; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ff4d4f; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #cfcac0;  /* The default color of the main navmenu links */
+  --nav-hover-color: #ff4d01; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #1a1a1a; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #1a1a1a; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #cfcac0; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #ff4d01; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: rgba(41, 41, 41, 0.8);
-  --surface-color: #484848;
+  --background-color: rgba(30, 30, 30, 0.85);
+  --surface-color: #262626;
 }
 
 .dark-background {
-  --background-color: #060606;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #252525;
+  --background-color: #0c0c0c;
+  --default-color: #cfcac0;
+  --heading-color: #f3eee0;
+  --surface-color: #1a1a1a;
   --contrast-color: #ffffff;
 }
 
@@ -79,14 +129,60 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
+h1 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
 h2,
-h3,
+h3 {
+  color: var(--heading-color-accent);
+  font-family: var(--accent-heading-font);
+}
+
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
+  color: var(--heading-color-accent);
   font-family: var(--heading-font);
+}
+
+/* WhatsApp brand green is intentionally kept off the palette here — the
+   floating WhatsApp button below uses the site accent instead so every
+   contact touchpoint stays on-brand. */
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  font-size: 28px;
+  z-index: 9997;
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent-color), transparent 45%);
+  transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+  background: var(--accent-color-dark);
+  color: var(--contrast-color);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--accent-color), transparent 30%);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+  }
 }
 
 /* PHP Email Form Messages
@@ -810,8 +906,33 @@ section,
 
 .hero h2 {
   margin: 0;
-  font-size: 48px;
+  font-size: 50px;
+  font-weight: 500;
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+  line-height: 1.2;
+}
+
+.hero h2 .hero-role {
+  display: block;
+  font-family: var(--accent-heading-font);
+  color: var(--accent-color);
+  font-size: 1.2em;
+  margin-top: 6px;
+}
+
+.hero h2 .hero-role .fw-thin {
+  font-weight: 300;
+}
+
+.hero h2 .hero-role .fw-strong {
   font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .hero h2 .hero-role {
+    font-size: 1.1em;
+  }
 }
 
 .hero p {
@@ -910,7 +1031,7 @@ section,
   position: relative;
   border-radius: 50%;
   padding: 6px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #ff6b9d 50%));
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #000000 25%));
 }
 
 .about .profile-card .profile-header .profile-avatar img {
@@ -957,7 +1078,7 @@ section,
 }
 
 .about .profile-card .profile-header .rating i {
-  color: #fbbf24;
+  color: var(--accent-color);
   font-size: 16px;
 }
 
@@ -1201,7 +1322,7 @@ section,
 .about .content-wrapper .skills-showcase .skills-list .skill-item .progress .progress-bar {
   width: 0;
   height: 100%;
-  background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #ff6b9d 50%));
+  background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #000000 25%));
   border-radius: 10px;
   transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
   position: relative;
@@ -1300,7 +1421,7 @@ section,
 
 .resume .section-header .header-content .section-badge {
   display: inline-block;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #6c5ce7 20%));
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #000000 25%));
   color: var(--contrast-color);
   padding: 0.5rem 1.2rem;
   border-radius: 25px;
@@ -1371,7 +1492,7 @@ section,
 }
 
 .resume .experience-section .experience-cards .exp-card.featured::before {
-  background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #6c5ce7 20%), var(--accent-color));
+  background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #000000 25%), var(--accent-color));
 }
 
 .resume .experience-section .experience-cards .exp-card .card-header {
@@ -1384,7 +1505,7 @@ section,
 .resume .experience-section .experience-cards .exp-card .card-header .company-logo {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #6c5ce7 20%));
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #000000 25%));
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -1486,7 +1607,7 @@ section,
   top: 0;
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #6c5ce7 20%));
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #000000 25%));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1763,7 +1884,7 @@ section,
 
 .services .service-item.featured {
   border-color: var(--accent-color);
-  box-shadow: 0 10px 30px rgba(54, 144, 231, 0.15);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
 .services .service-item.featured::before {
@@ -1782,7 +1903,7 @@ section,
   text-transform: uppercase;
   letter-spacing: 1px;
   transform: rotate(45deg);
-  box-shadow: 0 3px 10px rgba(54, 144, 231, 0.3);
+  box-shadow: 0 3px 10px color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
 .services .icon-wrapper {
@@ -1833,7 +1954,7 @@ section,
 }
 
 .services .cta-box {
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #667eea 40%));
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #000000 30%));
   border-radius: 20px;
   padding: 45px 50px;
   color: var(--contrast-color);
@@ -3112,7 +3233,7 @@ section,
 }
 
 .service-details .testimonial-section .testimonial-card .stars i {
-  color: #ffc107;
+  color: var(--accent-color);
   font-size: 1.25rem;
   margin-right: 0.25rem;
 }
@@ -4238,4 +4359,201 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+/*--------------------------------------------------------------
+# Show Reel Section
+--------------------------------------------------------------*/
+.showreel {
+  position: relative;
+}
+
+.showreel .reel-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.showreel .reel-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(145deg, var(--surface-color), color-mix(in srgb, var(--surface-color), #000 30%));
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px color-mix(in srgb, var(--accent-color), transparent 75%);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.showreel .reel-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px color-mix(in srgb, var(--accent-color), transparent 45%), 0 0 45px color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+.showreel .reel-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--accent-color), transparent 40%, transparent 60%, var(--accent-color));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 2;
+}
+
+.showreel .reel-card iframe,
+.showreel .reel-card .reel-placeholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.showreel .reel-card .reel-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--accent-color), transparent 88%), var(--surface-color) 60%);
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  font-size: 15px;
+  text-align: center;
+  padding: 20px;
+}
+
+.showreel .play-badge {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent-color), transparent 80%), 0 12px 30px color-mix(in srgb, var(--accent-color), transparent 50%);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.showreel .reel-card:hover .play-badge {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 14px color-mix(in srgb, var(--accent-color), transparent 75%), 0 16px 35px color-mix(in srgb, var(--accent-color), transparent 40%);
+}
+
+.showreel .watch-more-wrap {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.showreel .watch-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--heading-color);
+  font-family: var(--default-font);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 13px 32px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.showreel .watch-more-btn:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px color-mix(in srgb, var(--accent-color), transparent 55%);
+}
+
+.showreel .watch-more-btn i {
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.showreel .watch-more-btn:hover i {
+  transform: translateX(4px);
+}
+
+/*--------------------------------------------------------------
+# Toolkit / Core Skills Section
+--------------------------------------------------------------*/
+.toolkit .tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.toolkit .tool-card {
+  position: relative;
+  background: linear-gradient(155deg, var(--surface-color) 0%, color-mix(in srgb, var(--surface-color), #000 35%) 100%);
+  border-radius: 20px;
+  padding: 34px 18px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 88%);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.toolkit .tool-card:hover {
+  transform: translateY(-10px) rotateX(4deg);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 40%);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.55), 0 0 40px color-mix(in srgb, var(--accent-color), transparent 72%);
+}
+
+.toolkit .tool-card .tool-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 6px 14px color-mix(in srgb, var(--accent-color), transparent 45%));
+  transition: transform 0.35s ease;
+}
+
+.toolkit .tool-card:hover .tool-icon {
+  transform: scale(1.1) translateY(-2px);
+}
+
+.toolkit .tool-card .tool-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.toolkit .tool-card .tool-icon.tool-icon-text {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  color: var(--accent-color);
+  font-size: 30px;
+}
+
+.toolkit .tool-card span {
+  font-family: var(--default-font);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--default-color);
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 576px) {
+  .toolkit .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .toolkit .tool-card {
+    padding: 26px 12px 20px;
+  }
 }
