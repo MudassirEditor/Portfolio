@@ -21,7 +21,7 @@
    intentional if a font file is missing. */
 @font-face {
   font-family: "Recoleta";
-  src: url("../fonts/Recoleta-Regular.woff2") format("woff2");
+  src: url("../fonts/Recoleta/Recoleta Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -45,7 +45,7 @@
 
 @font-face {
   font-family: "Carollo Playscript";
-  src: url("../fonts/CarolloPlayscript-Regular.woff2") format("woff2");
+  src: url("../fonts/Carollo Playscript/Carollo Playscript Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
