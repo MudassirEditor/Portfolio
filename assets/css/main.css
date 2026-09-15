@@ -317,7 +317,7 @@ h6 {
 
 .header .logo img {
   width: 190px;
-  height: 48px;
+  height: 52px;
   max-height: none;
   margin-right: 0;
   object-fit: contain;
@@ -409,12 +409,14 @@ h6 {
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
-    padding: 18px 15px;
+    height: 52px;
+    padding: 0 15px;
     font-size: 16px;
     font-family: var(--nav-font);
     font-weight: 600;
     display: flex;
     align-items: center;
+    line-height: 1;
     justify-content: space-between;
     white-space: nowrap;
     transition: 0.3s;
