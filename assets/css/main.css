@@ -14,11 +14,27 @@
 --------------------------------------------------------------*/
 /* Fonts
    NOTE: Recoleta and Carollo Playscript are not distributed on Google Fonts —
-   they need to be self-hosted. Drop the licensed font files into
-   assets/fonts/ using the filenames below (or update the src paths) and
-   these will pick them up automatically. Inter is loaded from Google Fonts
-   in the <head>. Fallback stacks are in place so the site still looks
-   intentional if a font file is missing. */
+   they're self-hosted from assets/fonts/Recoleta/ and
+   assets/fonts/Carollo Playscript/, matching the actual file names from
+   your font packages. Inter is loaded from Google Fonts in the <head>.
+   Fallback stacks are in place so the site still looks intentional if a
+   font file is ever missing. */
+@font-face {
+  font-family: "Recoleta";
+  src: url("../fonts/Recoleta/Recoleta Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("../fonts/Recoleta/Recoleta Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: "Recoleta";
   src: url("../fonts/Recoleta/Recoleta Regular.woff2") format("woff2");
@@ -29,7 +45,7 @@
 
 @font-face {
   font-family: "Recoleta";
-  src: url("../fonts/Recoleta-Medium.woff2") format("woff2");
+  src: url("../fonts/Recoleta/Recoleta Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -37,8 +53,38 @@
 
 @font-face {
   font-family: "Recoleta";
-  src: url("../fonts/Recoleta-SemiBold.woff2") format("woff2");
+  src: url("../fonts/Recoleta/Recoleta SemiBold.woff2") format("woff2");
   font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("../fonts/Recoleta/Recoleta Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("../fonts/Recoleta/Recoleta Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Carollo Playscript only ships as OpenType (.otf) — no .woff2 in the
+   supplied files — so it's loaded as format("opentype") below. This is
+   why it wasn't rendering: the old rules pointed at .woff2 files that
+   don't exist. OTF works fine in every modern browser; convert to
+   .woff2 later (e.g. via fontsquirrel.com/tools/webfont-generator) for
+   smaller file size if you want to optimize load time. */
+@font-face {
+  font-family: "Carollo Playscript";
+  src: url("../fonts/Carollo Playscript/Carollo Playscript Light.otf") format("opentype");
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -53,8 +99,24 @@
 
 @font-face {
   font-family: "Carollo Playscript";
-  src: url("../fonts/CarolloPlayscript-Bold.woff2") format("woff2");
+  src: url("../fonts/Carollo Playscript/Carollo Playscript Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Carollo Playscript";
+  src: url("../fonts/Carollo Playscript/Carollo Playscript Bold.otf") format("opentype");
   font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Carollo Playscript";
+  src: url("../fonts/Carollo Playscript/Carollo Playscript Black.otf") format("opentype");
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
