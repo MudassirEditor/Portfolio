@@ -993,7 +993,7 @@ section,
 }
 
 .hero h2 .hero-role .fw-strong {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
@@ -4623,4 +4623,9 @@ section,
   .toolkit .tool-card {
     padding: 26px 12px 20px;
   }
+}
+
+h2,
+h3 {
+  font-weight: 500 !important;
 }
