@@ -4684,7 +4684,7 @@ section,
   height: 100%;
   padding: 13px;
   object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(38%) sepia(96%) saturate(4012%) hue-rotate(359deg) brightness(103%) contrast(105%) drop-shadow(1px 2px 0 color-mix(in srgb, var(--accent-color), black 35%));
+  filter: drop-shadow(1px 2px 0 color-mix(in srgb, var(--accent-color), black 35%));
 }
 
 .toolkit .tool-card .tool-icon.tool-icon-text {
