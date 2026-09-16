@@ -121,6 +121,23 @@
   }
 
   /**
+   * Show reel next buttons
+   */
+  const reelTrack = document.querySelector('.reel-track');
+  const reelCards = document.querySelectorAll('.reel-card');
+  if (reelTrack && reelCards.length > 1) {
+    document.querySelectorAll('.reel-next-btn').forEach((button, index) => {
+      button.addEventListener('click', () => {
+        const nextCard = reelCards[(index + 1) % reelCards.length];
+        reelTrack.scrollTo({
+          left: nextCard.offsetLeft - reelTrack.offsetLeft,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+
+  /**
    * Animate the skills items on reveal
    */
   let skillsAnimation = document.querySelectorAll('.skills-animation');
