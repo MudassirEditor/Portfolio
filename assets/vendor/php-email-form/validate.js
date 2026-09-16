@@ -6,6 +6,11 @@
 (function () {
   "use strict";
 
+  const emailJsPublicKey = 'xIjaaVX8geAeCtF8l';
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init({ publicKey: emailJsPublicKey });
+  }
+
   let forms = document.querySelectorAll('.php-email-form');
 
   forms.forEach( function(e) {
@@ -50,8 +55,39 @@
   });
 
   function php_email_form_submit(thisForm, action, formData) {
+    if (action === 'emailjs') {
+      const serviceId = thisForm.dataset.emailjsService;
+      const templateId = thisForm.dataset.emailjsTemplate;
+
+      if (typeof emailjs === 'undefined' || !serviceId || !templateId) {
+        displayError(thisForm, 'Email service is unavailable. Please try again later.');
+        return;
+      }
+
+      emailjs.send(serviceId, templateId, {
+        name: formData.get('name') || '',
+        email: formData.get('email') || '',
+        subject: formData.get('subject') || '',
+        message: formData.get('message') || '',
+        from_name: formData.get('name') || '',
+        from_email: formData.get('email') || '',
+        reply_to: formData.get('email') || ''
+      })
+        .then(() => {
+          thisForm.querySelector('.loading').classList.remove('d-block');
+          thisForm.querySelector('.sent-message').classList.add('d-block');
+          thisForm.reset();
+        })
+        .catch((error) => {
+          displayError(thisForm, error?.text || 'The message could not be sent. Please try again.');
+        });
+      return;
+    }
+
     if (action.includes('formspree.io')) {
-      formData.set('_subject', formData.get('subject') || 'New portfolio contact form submission');
+      const senderName = (formData.get('name') || 'New contact').toString().trim();
+      const subject = (formData.get('subject') || 'Portfolio contact form submission').toString().trim();
+      formData.set('_subject', `${senderName} - ${subject}`);
       formData.set('_replyto', formData.get('email') || '');
     }
 
