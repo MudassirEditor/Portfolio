@@ -687,6 +687,7 @@ h6 {
   font-weight: bold;
   position: relative;
   padding-bottom: 12px;
+  text-transform: uppercase;
 }
 
 .footer .footer-links {
