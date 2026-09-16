@@ -50,6 +50,11 @@
   });
 
   function php_email_form_submit(thisForm, action, formData) {
+    if (action.includes('formspree.io')) {
+      formData.set('_subject', formData.get('subject') || 'New portfolio contact form submission');
+      formData.set('_replyto', formData.get('email') || '');
+    }
+
     fetch(action, {
       method: 'POST',
       body: formData,
@@ -57,14 +62,25 @@
     })
     .then(response => {
       if( response.ok ) {
-        return response.text();
+        return response.text().then(text => ({ text, response }));
       } else {
         throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
       }
     })
-    .then(data => {
+    .then(({ text, response }) => {
       thisForm.querySelector('.loading').classList.remove('d-block');
-      if (data.trim() == 'OK') {
+      let data = text.trim();
+      let isSuccessful = data === 'OK';
+
+      if (response.url.includes('formspree.io') && data) {
+        try {
+          isSuccessful = JSON.parse(data).ok === true;
+        } catch (error) {
+          isSuccessful = false;
+        }
+      }
+
+      if (isSuccessful) {
         thisForm.querySelector('.sent-message').classList.add('d-block');
         thisForm.reset(); 
       } else {
