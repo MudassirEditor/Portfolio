@@ -178,6 +178,7 @@
         sortBy: sort
       });
     });
+    
 
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
       filters.addEventListener('click', function() {
