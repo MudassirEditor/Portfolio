@@ -1,0 +1,12 @@
+/* Webfont: NorBelsior-BoldItalic */@font-face {
+    font-family: 'MTBelsior';
+    src: url('NorBelsior-BoldItalic.eot'); /* IE9 Compat Modes */
+    src: url('NorBelsior-BoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('NorBelsior-BoldItalic.woff') format('woff'), /* Modern Browsers */
+         url('NorBelsior-BoldItalic.woff2') format('woff2'), /* Modern Browsers */
+         url('NorBelsior-BoldItalic.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: italic;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+

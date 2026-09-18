@@ -1,0 +1,12 @@
+/* Webfont: KalenorOX-Light */@font-face {
+    font-family: 'KalenorOXLight';
+    src: url('KalenorOX-Light.eot'); /* IE9 Compat Modes */
+    src: url('KalenorOX-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('KalenorOX-Light.woff') format('woff'), /* Modern Browsers */
+         url('KalenorOX-Light.woff2') format('woff2'), /* Modern Browsers */
+         url('KalenorOX-Light.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

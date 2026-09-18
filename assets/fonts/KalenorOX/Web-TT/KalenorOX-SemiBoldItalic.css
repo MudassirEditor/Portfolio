@@ -1,0 +1,12 @@
+/* Webfont: KalenorOX-SemiBoldItalic */@font-face {
+    font-family: 'KalenorOXSemBd';
+    src: url('KalenorOX-SemiBoldItalic.eot'); /* IE9 Compat Modes */
+    src: url('KalenorOX-SemiBoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('KalenorOX-SemiBoldItalic.woff') format('woff'), /* Modern Browsers */
+         url('KalenorOX-SemiBoldItalic.woff2') format('woff2'), /* Modern Browsers */
+         url('KalenorOX-SemiBoldItalic.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
